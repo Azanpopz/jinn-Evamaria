@@ -750,6 +750,19 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist)) # removing duplicates
     if not movielist:
         k = await msg.reply("I couldn't find anything related to that. Check your spelling")
+        parse_mode="html",
+        reply_markup=InlineKeyboardMarkup(
+                        [
+                            [
+                                
+                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url=f'https://google.com/search?q={search.replace(" ","+")}'),
+                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url='https://www.imdb.com')
+                            ]                            
+                        ]
+                    )
+                )         
+        
+
         await asyncio.sleep(8)
         await k.delete()
         return
